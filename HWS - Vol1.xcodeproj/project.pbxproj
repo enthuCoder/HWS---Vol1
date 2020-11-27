@@ -17,6 +17,9 @@
 		7B8EA65C2570B92700F1F564 /* TableOfContents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B8EA65B2570B92700F1F564 /* TableOfContents.plist */; };
 		7B8EA6602570BD8000F1F564 /* TableOfContentsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8EA65F2570BD8000F1F564 /* TableOfContentsDatasource.swift */; };
 		7B8EA6632570BEEB00F1F564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8EA6622570BEEB00F1F564 /* Constants.swift */; };
+		7B8EA6672570C8D100F1F564 /* HappyDaysWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8EA6662570C8D100F1F564 /* HappyDaysWelcomeViewController.swift */; };
+		7B8EA66C2570D84700F1F564 /* MemoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8EA66B2570D84700F1F564 /* MemoriesViewController.swift */; };
+		7B8EA66F2570D8FD00F1F564 /* MemoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8EA66E2570D8FD00F1F564 /* MemoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		7B8EA65B2570B92700F1F564 /* TableOfContents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TableOfContents.plist; sourceTree = "<group>"; };
 		7B8EA65F2570BD8000F1F564 /* TableOfContentsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsDatasource.swift; sourceTree = "<group>"; };
 		7B8EA6622570BEEB00F1F564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7B8EA6662570C8D100F1F564 /* HappyDaysWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyDaysWelcomeViewController.swift; sourceTree = "<group>"; };
+		7B8EA66B2570D84700F1F564 /* MemoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesViewController.swift; sourceTree = "<group>"; };
+		7B8EA66E2570D8FD00F1F564 /* MemoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 			children = (
 				7B8EA6472570B84600F1F564 /* TableOfContentsViewController.swift */,
 				7B8EA65F2570BD8000F1F564 /* TableOfContentsDatasource.swift */,
+				7B8EA6652570C8A400F1F564 /* HappyDays */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,6 +116,16 @@
 				7B8EA6622570BEEB00F1F564 /* Constants.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7B8EA6652570C8A400F1F564 /* HappyDays */ = {
+			isa = PBXGroup;
+			children = (
+				7B8EA6662570C8D100F1F564 /* HappyDaysWelcomeViewController.swift */,
+				7B8EA66B2570D84700F1F564 /* MemoriesViewController.swift */,
+				7B8EA66E2570D8FD00F1F564 /* MemoryCell.swift */,
+			);
+			path = HappyDays;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,11 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8EA6602570BD8000F1F564 /* TableOfContentsDatasource.swift in Sources */,
+				7B8EA66F2570D8FD00F1F564 /* MemoryCell.swift in Sources */,
 				7B8EA6302570B7A600F1F564 /* AppDelegate.swift in Sources */,
 				7B8EA6482570B84600F1F564 /* TableOfContentsViewController.swift in Sources */,
 				7B8EA6322570B7A600F1F564 /* SceneDelegate.swift in Sources */,
 				7B8EA64D2570B86A00F1F564 /* TableOfContents.swift in Sources */,
 				7B8EA6632570BEEB00F1F564 /* Constants.swift in Sources */,
+				7B8EA6672570C8D100F1F564 /* HappyDaysWelcomeViewController.swift in Sources */,
+				7B8EA66C2570D84700F1F564 /* MemoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

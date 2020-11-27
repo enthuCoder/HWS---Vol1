@@ -16,3 +16,7 @@ struct Constants {
 enum TableViewCellIdentifiers: String {
     case tableOfContentsCell = "tableOfContentsCell"
 }
+
+enum HWSSegues: String {
+    case happyDaysWelcome = "happyDays"
+}

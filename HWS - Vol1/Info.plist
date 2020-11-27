@@ -45,6 +45,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We use this to let you import Photos</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We use this to record your narration</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>We use this to transcribe your narration</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

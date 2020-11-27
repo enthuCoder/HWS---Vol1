@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,6 +38,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="T6R-x9-M1x" kind="show" identifier="happyDays" id="fVZ-Vb-3UU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -53,15 +57,132 @@
             </objects>
             <point key="canvasLocation" x="554" y="82"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Happy Days - Welcome-->
+        <scene sceneID="GKw-pj-RbD">
+            <objects>
+                <viewController storyboardIdentifier="FirstRun" id="rYG-ae-Xsh" customClass="HappyDaysWelcomeViewController" customModule="HWS___Vol1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="99g-oQ-ED2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="XUE-kl-uMt">
+                                <rect key="frame" x="20" y="330.5" width="374" height="235.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYe-9C-jd5">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="143.5"/>
+                                        <string key="text">In order to work fully, Happy Days needs to read your photo library, record your voice, and transcribe what you said. When you click the button below you will be asked to grant those permissions, but you can change your mind later in Settings.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdI-5F-z2f">
+                                        <rect key="frame" x="0.0" y="193.5" width="374" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Continue"/>
+                                        <connections>
+                                            <action selector="requestPermission:" destination="rYG-ae-Xsh" eventType="touchUpInside" id="vtG-C1-oFE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m2C-u7-23K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XUE-kl-uMt" firstAttribute="centerX" secondItem="99g-oQ-ED2" secondAttribute="centerX" id="8bd-eP-2Wj"/>
+                            <constraint firstItem="XUE-kl-uMt" firstAttribute="width" secondItem="99g-oQ-ED2" secondAttribute="width" constant="-40" id="YRS-Pw-M8N"/>
+                            <constraint firstItem="XUE-kl-uMt" firstAttribute="centerY" secondItem="99g-oQ-ED2" secondAttribute="centerY" id="lLD-ts-N03"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Happy Days - Welcome" id="6X1-YG-Jnq"/>
+                    <connections>
+                        <outlet property="helpLabel" destination="GYe-9C-jd5" id="bMS-7v-GUf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYL-Ih-Sjn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-675" y="840"/>
+        </scene>
+        <!--Happy Days-->
+        <scene sceneID="0MN-gw-cbg">
+            <objects>
+                <collectionViewController modalPresentationStyle="fullScreen" id="T6R-x9-M1x" customClass="MemoriesViewController" customModule="HWS___Vol1" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="GEc-El-64F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="Ooz-FJ-468">
+                            <size key="itemSize" width="200" height="200"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Memory" id="ZVv-c3-bsb" customClass="MemoryCell" customModule="HWS___Vol1" customModuleProvider="target">
+                                <rect key="frame" x="107" y="50" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VUa-Sh-pMf">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zLv-h6-YOp">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zLv-h6-YOp" firstAttribute="centerY" secondItem="VUa-Sh-pMf" secondAttribute="centerY" id="6D5-SS-yP9"/>
+                                        <constraint firstItem="zLv-h6-YOp" firstAttribute="leading" secondItem="VUa-Sh-pMf" secondAttribute="leading" id="A9I-q5-GH9"/>
+                                        <constraint firstItem="zLv-h6-YOp" firstAttribute="centerX" secondItem="VUa-Sh-pMf" secondAttribute="centerX" id="aGe-kT-QwD"/>
+                                        <constraint firstItem="zLv-h6-YOp" firstAttribute="top" secondItem="VUa-Sh-pMf" secondAttribute="top" id="bVU-ze-uqf"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="zLv-h6-YOp" id="pCo-Jc-Vny"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Header" id="OuK-38-cfg">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="STA-xa-hgh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="T6R-x9-M1x" id="apL-8w-051"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="T6R-x9-M1x" id="03N-Hl-Ezo"/>
+                            <outlet property="delegate" destination="T6R-x9-M1x" id="Mc6-np-hyb"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Happy Days" id="MIt-Js-ap9"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Neh-Y2-LKK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="840"/>
+        </scene>
+        <!--HWS - Vol1 Navigation Controller-->
         <scene sceneID="7kx-t6-Mo0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Zd-ft-98F" sceneMemberID="viewController">
+                <navigationController title="HWS - Vol1 Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="9Zd-ft-98F" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vJ0-th-JAR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" systemColor="systemTealColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -70,7 +191,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcC-KS-tju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197.10144927536234" y="82.366071428571431"/>
+            <point key="canvasLocation" x="554" y="-652"/>
         </scene>
     </scenes>
     <resources>
